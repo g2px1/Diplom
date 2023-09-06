@@ -13,6 +13,8 @@ public:
     [[maybe_unused]] explicit PRNG(int64_t userSeed);
 public:
     [[nodiscard]] int64_t getSeed() const;
+    int32_t generateNumber32(int min, int max);
+    int64_t generateNumber64(int64_t min, int64_t max);
 protected:
     std::unique_ptr<int64_t> seed;
     std::mt19937 gen32;

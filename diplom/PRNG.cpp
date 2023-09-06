@@ -22,3 +22,13 @@ PRNG::PRNG() {
     this->gen32.seed(dev());
     this->gen64.seed(dev());
 }
+
+int32_t PRNG::generateNumber32(int min = INT32_MIN, int max = INT32_MAX) {
+    std::uniform_int_distribution<int> dist(min, max);
+    return dist(this->gen32);
+}
+
+int64_t PRNG::generateNumber64(int64_t min = INT64_MIN, int64_t max = INT64_MAX) {
+    std::uniform_int_distribution<int64_t> dist(min, max);
+    return dist(this->gen64);
+}
