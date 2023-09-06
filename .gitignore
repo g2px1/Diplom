@@ -1,0 +1,7 @@
+build-ui-Desktop-Debug/
+.idea
+.DS_Store
+.env
+build/
+.vscode/
+cmake-build-debug
