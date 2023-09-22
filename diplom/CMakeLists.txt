@@ -7,4 +7,6 @@ add_executable(diplom main.cpp
         ContainerTest.cpp
         ContainerTest.h
         PRNG.cpp
-        PRNG.h)
+        PRNG.h
+        DurationCounter.cpp
+        DurationCounter.h)
