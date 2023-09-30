@@ -9,4 +9,5 @@ add_executable(diplom main.cpp
         PRNG.cpp
         PRNG.h
         DurationCounter.cpp
-        DurationCounter.h)
+        DurationCounter.h
+        TestOperations.h)

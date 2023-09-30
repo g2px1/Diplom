@@ -5,4 +5,24 @@
 #include "ContainerTest.h"
 
 template<class T>
-ContainerTest<T>::ContainerTest(CONTAINER_TYPE type, T &&testing_container) : containerType(type), container(testing_container) {}
+ContainerTest<T>::ContainerTest(T &&testing_container) : container(testing_container) {}
+
+template<class T>
+SequenceContainerTester<T>::SequenceContainerTester(T &&container)
+        : ContainerTest<T>(std::forward<T>(container)) {
+}
+
+template<class T>
+MapTester<T>::MapTester(T &&container)
+        : ContainerTest<T>(std::forward<T>(container)) {
+}
+
+template<class T>
+TreeTester<T>::TreeTester(T &&container)
+        : ContainerTest<T>(std::forward<T>(container)) {
+}
+
+template<class T>
+uint64_t SequenceContainerTester<T>::test() {
+    return 0;
+}

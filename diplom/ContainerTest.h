@@ -5,25 +5,49 @@
 #ifndef DIPLOM_CONTAINERTEST_H
 #define DIPLOM_CONTAINERTEST_H
 
-typedef unsigned char u1;
+#include <cstdio>
+#include <utility>
 
-enum CONTAINER_TYPE : u1 {
-    SEQUENCE_CONTAINER,
-    MAP,
-    TREE
-};
-
-template <class T>
+template<class T>
 class ContainerTest {
 public:
-    ContainerTest(CONTAINER_TYPE type, T &&testing_container);
-public:
-    void test();
-private:
+    template<class U>
+    friend
+    class SequenceContainer;
 
-protected:
-    CONTAINER_TYPE containerType;
+public:
+    explicit ContainerTest(T &&testing_container);
+
+public:
+    virtual uint64_t test() = 0;
+
+private:
     T container;
+protected:
+};
+
+template<class T>
+class SequenceContainerTester : public ContainerTest<T> {
+public:
+    explicit SequenceContainerTester(T &&container);
+public:
+    uint64_t test() override;
+};
+
+template<class T>
+class MapTester : public ContainerTest<T> {
+public:
+    explicit MapTester(T &&container);
+public:
+    uint64_t test() override;
+};
+
+template<class T>
+class TreeTester : public ContainerTest<T> {
+public:
+    explicit TreeTester(T &&container);
+public:
+    uint64_t test() override;
 };
 
 #endif //DIPLOM_CONTAINERTEST_H
