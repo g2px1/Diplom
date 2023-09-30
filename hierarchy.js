@@ -4,7 +4,7 @@ var hierarchy =
       [ "LogDuration", "classLogDuration.html", null ]
     ] ],
     [ "ContainerTest< T >", "classContainerTest.html", [
-      [ "MapTester< T >", "classMapTester.html", null ],
+      [ "AssociativeTester< T >", "classAssociativeTester.html", null ],
       [ "SequenceContainerTester< T >", "classSequenceContainerTester.html", null ],
       [ "TreeTester< T >", "classTreeTester.html", null ]
     ] ],

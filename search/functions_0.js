@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basicdurationcounter_0',['BasicDurationCounter',['../classBasicDurationCounter.html#a97b7fae48576312ece1d4452056c4ef4',1,'BasicDurationCounter']]]
+  ['associativetester_0',['AssociativeTester',['../classAssociativeTester.html#a34303924a05ac4aef4e048a277ddf079',1,'AssociativeTester']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['logduration_0',['LogDuration',['../classLogDuration.html',1,'LogDuration'],['../classBasicDurationCounter.html#a8714e42a599eb67dbfd324a07773b499',1,'BasicDurationCounter::LogDuration()'],['../classLogDuration.html#ace84b6eb831af8f7623efbedc65aafe1',1,'LogDuration::LogDuration()']]]
+  ['prng_0',['PRNG',['../classPRNG.html',1,'PRNG'],['../classPRNG.html#a1c3821112798470b83ac62e9e54acf4d',1,'PRNG::PRNG()'],['../classPRNG.html#ab3fe24e1714feafb2f103995a8c47434',1,'PRNG::PRNG(int64_t userSeed)']]],
+  ['prng_2ecpp_1',['PRNG.cpp',['../PRNG_8cpp.html',1,'']]],
+  ['prng_2eh_2',['PRNG.h',['../PRNG_8h.html',1,'']]]
 ];

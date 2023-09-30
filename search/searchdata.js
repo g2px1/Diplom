@@ -1,14 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "_abcdefghilmpst~",
-  1: "bclmpst",
+  0: "abcdefgilmpst~",
+  1: "abclpst",
   2: "cdmpt",
-  3: "bcfglmpst~",
+  3: "abcfglmpst~",
   4: "cgis",
   5: "s",
   6: "adei",
-  7: "ls",
-  8: "_acdhps"
+  7: "l"
 };
 
 var indexSectionNames =
@@ -20,8 +19,7 @@ var indexSectionNames =
   4: "variables",
   5: "enums",
   6: "enumvalues",
-  7: "related",
-  8: "defines"
+  7: "related"
 };
 
 var indexSectionLabels =
@@ -33,7 +31,6 @@ var indexSectionLabels =
   4: "Variables",
   5: "Enumerations",
   6: "Enumerator",
-  7: "Friends",
-  8: "Macros"
+  7: "Friends"
 };
 

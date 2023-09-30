@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sequencecontainertester_0',['SequenceContainerTester',['../classSequenceContainerTester.html#a52a2f59128ed689912af7e518d1277a9',1,'SequenceContainerTester']]]
+  ['prng_0',['PRNG',['../classPRNG.html#a1c3821112798470b83ac62e9e54acf4d',1,'PRNG::PRNG()'],['../classPRNG.html#ab3fe24e1714feafb2f103995a8c47434',1,'PRNG::PRNG(int64_t userSeed)']]]
 ];

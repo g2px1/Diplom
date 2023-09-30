@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basicdurationcounter_0',['BasicDurationCounter',['../classBasicDurationCounter.html',1,'']]]
+  ['associativetester_0',['AssociativeTester',['../classAssociativeTester.html',1,'']]]
 ];

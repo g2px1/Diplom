@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maptester_0',['MapTester',['../classMapTester.html',1,'']]]
+  ['logduration_0',['LogDuration',['../classLogDuration.html',1,'']]]
 ];
