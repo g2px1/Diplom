@@ -13,7 +13,7 @@ SequenceContainerTester<T>::SequenceContainerTester(T &&container)
 }
 
 template<class T>
-MapTester<T>::MapTester(T &&container)
+AssociativeTester<T>::AssociativeTester(T &&container)
         : ContainerTest<T>(std::forward<T>(container)) {
 }
 
