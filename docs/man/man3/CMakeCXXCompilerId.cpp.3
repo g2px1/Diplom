@@ -1,0 +1,198 @@
+.TH "/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdCXX/CMakeCXXCompilerId.cpp" 3 "Sat Sep 30 2023" "Diplom" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdCXX/CMakeCXXCompilerId.cpp
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__has_include\fP(x)   0"
+.br
+.ti -1c
+.RI "#define \fBARCHITECTURE_ID\fP"
+.br
+.ti -1c
+.RI "#define \fBCOMPILER_ID\fP   ''"
+.br
+.ti -1c
+.RI "#define \fBCXX_STD\fP   __cplusplus"
+.br
+.ti -1c
+.RI "#define \fBDEC\fP(n)"
+.br
+.ti -1c
+.RI "#define \fBHEX\fP(n)"
+.br
+.ti -1c
+.RI "#define \fBPLATFORM_ID\fP"
+.br
+.ti -1c
+.RI "#define \fBSTRINGIFY\fP(X)   \fBSTRINGIFY_HELPER\fP(X)"
+.br
+.ti -1c
+.RI "#define \fBSTRINGIFY_HELPER\fP(X)   #X"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char const  * \fBinfo_arch\fP = 'INFO' ':' 'arch[' ARCHITECTURE_ID ']'"
+.br
+.ti -1c
+.RI "char const  * \fBinfo_compiler\fP = 'INFO' ':' 'compiler[' COMPILER_ID ']'"
+.br
+.ti -1c
+.RI "const char * \fBinfo_language_extensions_default\fP"
+.br
+.ti -1c
+.RI "const char * \fBinfo_language_standard_default\fP"
+.br
+.ti -1c
+.RI "char const  * \fBinfo_platform\fP = 'INFO' ':' 'platform[' PLATFORM_ID ']'"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define __has_include(x)   0"
+
+.PP
+Definition at line \fB11\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.SS "#define ARCHITECTURE_ID"
+
+.PP
+Definition at line \fB701\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.SS "#define COMPILER_ID   ''"
+
+.PP
+Definition at line \fB412\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.SS "#define CXX_STD   __cplusplus"
+
+.PP
+Definition at line \fB799\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.SS "#define DEC(n)"
+\fBValue:\fP.PP
+.nf
+  ('0' + (((n) / 10000000)%10)), \\
+  ('0' + (((n) / 1000000)%10)),  \\
+  ('0' + (((n) / 100000)%10)),   \\
+  ('0' + (((n) / 10000)%10)),    \\
+  ('0' + (((n) / 1000)%10)),     \\
+  ('0' + (((n) / 100)%10)),      \\
+  ('0' + (((n) / 10)%10)),       \\
+  ('0' +  ((n) % 10))
+.fi
+
+.PP
+Definition at line \fB705\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.SS "#define HEX(n)"
+\fBValue:\fP.PP
+.nf
+  ('0' + ((n)>>28 & 0xF)), \\
+  ('0' + ((n)>>24 & 0xF)), \\
+  ('0' + ((n)>>20 & 0xF)), \\
+  ('0' + ((n)>>16 & 0xF)), \\
+  ('0' + ((n)>>12 & 0xF)), \\
+  ('0' + ((n)>>8  & 0xF)), \\
+  ('0' + ((n)>>4  & 0xF)), \\
+  ('0' + ((n)     & 0xF))
+.fi
+
+.PP
+Definition at line \fB716\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.SS "#define PLATFORM_ID"
+
+.PP
+Definition at line \fB543\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.SS "#define STRINGIFY(X)   \fBSTRINGIFY_HELPER\fP(X)"
+
+.PP
+Definition at line \fB433\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.SS "#define STRINGIFY_HELPER(X)   #X"
+
+.PP
+Definition at line \fB432\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Definition at line \fB830\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.PP
+References \fBinfo_arch\fP, \fBinfo_compiler\fP, \fBinfo_language_extensions_default\fP, \fBinfo_language_standard_default\fP, and \fBinfo_platform\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "char const* info_arch = 'INFO' ':' 'arch[' ARCHITECTURE_ID ']'"
+
+.PP
+Definition at line \fB782\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "char const* info_compiler = 'INFO' ':' 'compiler[' COMPILER_ID ']'"
+
+.PP
+Definition at line \fB419\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "const char* info_language_extensions_default"
+\fBInitial value:\fP.PP
+.nf
+= "INFO" ":" "extensions_default["
+
+
+
+
+
+  "OFF"
+
+"]"
+.fi
+
+.PP
+Definition at line \fB818\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "const char* info_language_standard_default"
+\fBInitial value:\fP.PP
+.nf
+= "INFO" ":" "standard_default["
+
+
+
+
+
+
+
+
+
+
+
+  "98"
+
+"]"
+.fi
+
+.PP
+Definition at line \fB802\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SS "char const* info_platform = 'INFO' ':' 'platform[' PLATFORM_ID ']'"
+
+.PP
+Definition at line \fB781\fP of file \fBCMakeCXXCompilerId\&.cpp\fP\&.
+.PP
+Referenced by \fBmain()\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Diplom from the source code\&.

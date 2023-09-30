@@ -1,0 +1,72 @@
+.TH "LogDuration" 3 "Sat Sep 30 2023" "Diplom" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LogDuration \- Prints total elapsed time while destructor called in ms\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DurationCounter\&.h>\fP
+.PP
+Inherits \fBBasicDurationCounter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLogDuration\fP (std::string name)"
+.br
+.ti -1c
+.RI "\fB~LogDuration\fP () override"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBBasicDurationCounter\fP
+.in +1c
+.ti -1c
+.RI "\fBBasicDurationCounter\fP ()=default"
+.br
+.ti -1c
+.RI "uint64_t \fBfinishManually\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~BasicDurationCounter\fP ()=default"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBid\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Prints total elapsed time while destructor called in ms\&. 
+
+Doesn't need any functions to measure time 
+.PP
+Definition at line \fB37\fP of file \fBDurationCounter\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LogDuration::LogDuration (std::string name)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line \fB39\fP of file \fBDurationCounter\&.h\fP\&.
+.SS "LogDuration::~LogDuration ()\fC [inline]\fP, \fC [override]\fP"
+
+.PP
+Definition at line \fB40\fP of file \fBDurationCounter\&.h\fP\&.
+.PP
+References \fBBasicDurationCounter::start_time\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::string LogDuration::id\fC [private]\fP"
+
+.PP
+Definition at line \fB49\fP of file \fBDurationCounter\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Diplom from the source code\&.

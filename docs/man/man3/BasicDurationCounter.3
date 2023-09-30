@@ -1,0 +1,86 @@
+.TH "BasicDurationCounter" 3 "Sat Sep 30 2023" "Diplom" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BasicDurationCounter \- Start time counting after initialization\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DurationCounter\&.h>\fP
+.PP
+Inherited by \fBLogDuration\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasicDurationCounter\fP ()=default"
+.br
+.ti -1c
+.RI "uint64_t \fBfinishManually\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~BasicDurationCounter\fP ()=default"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const std::chrono::steady_clock::time_point \fBstart_time\fP = std::chrono::steady_clock::now()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBLogDuration\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Start time counting after initialization\&. 
+
+Should be stopped manually by using necessary function 
+.PP
+Definition at line \fB16\fP of file \fBDurationCounter\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BasicDurationCounter::BasicDurationCounter ()\fC [explicit]\fP, \fC [default]\fP"
+
+.SS "virtual BasicDurationCounter::~BasicDurationCounter ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "uint64_t BasicDurationCounter::finishManually ()"
+counting the total elapsed time through the difference between the start and the time of the given function call 
+.PP
+\fBReturns\fP
+.RS 4
+total elapsed time in ms 
+.RE
+.PP
+
+.PP
+Definition at line \fB7\fP of file \fBDurationCounter\&.cpp\fP\&.
+.PP
+References \fBstart_time\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBLogDuration\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB18\fP of file \fBDurationCounter\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::chrono::steady_clock::time_point BasicDurationCounter::start_time = std::chrono::steady_clock::now()\fC [private]\fP"
+
+.PP
+Definition at line \fB29\fP of file \fBDurationCounter\&.h\fP\&.
+.PP
+Referenced by \fBfinishManually()\fP, and \fBLogDuration::~LogDuration()\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Diplom from the source code\&.

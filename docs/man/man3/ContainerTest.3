@@ -1,0 +1,72 @@
+.TH "ContainerTest< T >" 3 "Sat Sep 30 2023" "Diplom" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ContainerTest< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ContainerTest\&.h>\fP
+.PP
+Inherited by \fBMapTester< T >\fP, \fBSequenceContainerTester< T >\fP, and \fBTreeTester< T >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBContainerTest\fP (T &&testing_container)"
+.br
+.ti -1c
+.RI "virtual uint64_t \fBtest\fP ()=0"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "T \fBcontainer\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "template<class U > class \fBSequenceContainer\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T>
+.br
+class ContainerTest< T >"
+.PP
+Definition at line \fB12\fP of file \fBContainerTest\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T > \fBContainerTest\fP< T >\fB::ContainerTest\fP (T && testing_container)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB8\fP of file \fBContainerTest\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T > virtual uint64_t \fBContainerTest\fP< T >::test ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBSequenceContainerTester< T >\fP, \fBMapTester< T >\fP, and \fBTreeTester< T >\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "template<class T > template<class U > friend class SequenceContainer\fC [friend]\fP"
+
+.PP
+Definition at line \fB16\fP of file \fBContainerTest\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class T > T \fBContainerTest\fP< T >::container\fC [private]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBContainerTest\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Diplom from the source code\&.

@@ -8,8 +8,8 @@
 #include <random>
 
 /**
- * @class PRNG - pseudo-random number generator
- * @brief Provides interface to generate numbers: 32, 64 bit.
+ * @class PRNG
+ * @brief Pseudo-random number generator. Provides interface to generate numbers: 32, 64 bit.
  * @param seed pointer to <b>int64_t</b> which is used for generating random numbers
  * @param gen32 Mersenne twister 32-bit number generator
  * @param gen64 Mersenne twister 64-bit number generator

@@ -1,0 +1,40 @@
+\hypertarget{PRNG_8cpp_source}{}\doxysubsection{PRNG.\+cpp}
+\label{PRNG_8cpp_source}\index{/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/PRNG.cpp@{/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/PRNG.cpp}}
+\mbox{\hyperlink{PRNG_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Kirill\ Zhukov\ on\ 06.09.2023.}}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PRNG_8h}{PRNG.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00007}\mbox{\hyperlink{classPRNG_ab3fe24e1714feafb2f103995a8c47434}{00007}}\ [[maybe\_unused]]\ \mbox{\hyperlink{classPRNG_a1c3821112798470b83ac62e9e54acf4d}{PRNG::PRNG}}(int64\_t\ userSeed)\ \{}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00008}00008\ \ \ \ \ this-\/>\mbox{\hyperlink{classPRNG_a52cfcab61e2856bc0a641bed9887b819}{seed}}\ =\ std::make\_unique<int64\_t>(userSeed);}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00009}00009\ \ \ \ \ this-\/>\mbox{\hyperlink{classPRNG_a434d1b65aae53798d058481ba36f69e9}{gen32}}.seed(userSeed);}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00010}00010\ \ \ \ \ this-\/>\mbox{\hyperlink{classPRNG_a266f363827bee3dd8112c3440063779a}{gen64}}.seed(userSeed);}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00013}\mbox{\hyperlink{classPRNG_a8579c18d2a57c41852c97c4e1016a0f8}{00013}}\ int64\_t\ \mbox{\hyperlink{classPRNG_a8579c18d2a57c41852c97c4e1016a0f8}{PRNG::getSeed}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>\mbox{\hyperlink{classPRNG_a52cfcab61e2856bc0a641bed9887b819}{seed}})\ \{}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ INT64\_MIN;}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{return}\ (*this-\/>\mbox{\hyperlink{classPRNG_a52cfcab61e2856bc0a641bed9887b819}{seed}});}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00020}\mbox{\hyperlink{classPRNG_a1c3821112798470b83ac62e9e54acf4d}{00020}}\ \mbox{\hyperlink{classPRNG_a1c3821112798470b83ac62e9e54acf4d}{PRNG::PRNG}}()\ \{}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00021}00021\ \ \ \ \ std::random\_device\ dev;}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00022}00022\ \ \ \ \ this-\/>\mbox{\hyperlink{classPRNG_a434d1b65aae53798d058481ba36f69e9}{gen32}}.seed(dev());}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00023}00023\ \ \ \ \ this-\/>\mbox{\hyperlink{classPRNG_a266f363827bee3dd8112c3440063779a}{gen64}}.seed(dev());}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00026}\mbox{\hyperlink{classPRNG_a71de21076e5ca476b035245c6c6906bb}{00026}}\ int32\_t\ \mbox{\hyperlink{classPRNG_a71de21076e5ca476b035245c6c6906bb}{PRNG::generateNumber32}}(\textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)\ \{}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00027}00027\ \ \ \ \ std::uniform\_int\_distribution<int>\ dist(min,\ max);}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{return}\ dist(this-\/>\mbox{\hyperlink{classPRNG_a434d1b65aae53798d058481ba36f69e9}{gen32}});}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00031}\mbox{\hyperlink{classPRNG_a08d3b9537f650bedebade977616b4d7f}{00031}}\ int64\_t\ \mbox{\hyperlink{classPRNG_a08d3b9537f650bedebade977616b4d7f}{PRNG::generateNumber64}}(int64\_t\ min,\ int64\_t\ max)\ \{}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00032}00032\ \ \ \ \ std::uniform\_int\_distribution<int64\_t>\ dist(min,\ max);}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{return}\ dist(this-\/>\mbox{\hyperlink{classPRNG_a266f363827bee3dd8112c3440063779a}{gen64}});}
+\DoxyCodeLine{\Hypertarget{PRNG_8cpp_source_l00034}00034\ \}}
+
+\end{DoxyCode}
