@@ -2,6 +2,10 @@
 
 ## Documentation
 
+#### First way
+Can be accessed on github pages: [link](https://g2px1.github.io/Diplom)
+
+#### Second way
 To create documentation just follow steps:
 
 1. Install [Doxygen](https://www.doxygen.nl)
