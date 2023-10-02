@@ -23,10 +23,6 @@ int64_t threadFunction() {
  * @tparam U type of data which is used in tests by threads
  * @tparam V container itself
  * @tparam T size of threads pool
- * @var <b>pool</b> thread pool itself
- * @var <b>promise</b> used to return value from thread
- * @var <b>future</b> used to return value from thread
- * @var <b>containerTest</b> test for container
  * */
 template<class U, class V, std::size_t T>
 class Pool {
@@ -38,9 +34,21 @@ public:
      * */
     Pool(std::vector<U> &&data, V &&container);
 private:
+    /**
+     * @brief thread pool itself
+     * */
     std::array<thread, T> pool;
+    /**
+     * @brief used to return value from thread
+     * */
     std::array<std::promise<int64_t>, T> promise;
+    /**
+     * @brief used to return value from thread
+     * */
     std::array<std::future<int64_t>, T> future;
+    /**
+     * @brief test for container
+     * */
     std::unique_ptr<ContainerTest<V>> containerTest;
 };
 

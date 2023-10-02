@@ -11,7 +11,6 @@
 /**
  *  @class ContainerTest
  *  @brief Basic class for testing all types of containers. Stores container itself
- *  @var <b>container</b> container to test
  * */
 template<class T>
 class ContainerTest {
@@ -25,6 +24,9 @@ public:
     virtual uint64_t test() = 0;
 
 private:
+    /**
+     * @brief container to test
+     * */
     T container;
 };
 
@@ -37,7 +39,6 @@ private:
  * <a href="https://en.cppreference.com/w/cpp/container/forward_list">std::forward_list</a>,
  * <a href="https://en.cppreference.com/w/cpp/container/deque">std::deque</a>,
  * etc.
- * @var <b>operations</b> vector of operations to be tested
  * */
 template<class T, class V>
 class SequenceContainerTester : public ContainerTest<T> {
@@ -63,6 +64,9 @@ public:
 
 public:
 private:
+    /**
+     * @brief vector of operations to be tested
+     * */
     std::vector<V> operations;
 };
 
@@ -79,7 +83,6 @@ template<class T>
 class AssociativeTester : public ContainerTest<T> {
 public:
     explicit AssociativeTester(T &&container);
-
 public:
     uint64_t test() override;
 };

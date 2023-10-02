@@ -10,9 +10,6 @@
 /**
  * @class PRNG
  * @brief Pseudo-random number generator. Provides interface to generate numbers: 32, 64 bit.
- * @var <b>seed</b> pointer to <b>int64_t</b> which is used for generating random numbers
- * @var <b>gen32</b> Mersenne twister 32-bit number generator
- * @var <b>gen64</b> Mersenne twister 64-bit number generator
  * */
 class PRNG {
 public:
@@ -41,8 +38,17 @@ public:
     int64_t generateNumber64(int64_t min = INT64_MIN, int64_t max = INT64_MAX);
 
 protected:
+    /**
+     * @brief pointer to <b>int64_t</b> which is used for generating random numbers
+     * */
     std::unique_ptr<int64_t> seed;
+    /**
+     * @brief Mersenne twister 32-bit number generator
+     * */
     std::mt19937 gen32;
+    /**
+     * @brief Mersenne twister 64-bit number generator
+     * */
     std::mt19937_64 gen64;
 };
 

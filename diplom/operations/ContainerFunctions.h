@@ -25,24 +25,16 @@ namespace sequence {
 
     /**
      * @enum AvailableFunctions
-     * @var INSERT_FRONT corresponds to insertion operations at the beginning
-     * @var INSERT_BACK corresponds to insertion operations at the end
-     * @var INSERT_INDEXED corresponds to insertion operations by index
-     * @var ACCESS_ELEMENT corresponds to access operations to the element
-     * @var EMPLACE corresponds to the operations of on-site construction of the element
-     * @var DELETE_FRONT corresponds to deletion operations from the beginning
-     * @var DELETE_BACK corresponds to end deletion operations
-     * @var DELETE_INDEXED corresponds to deletion operations by index
      * */
     enum AvailableFunctions : uint32_t {
-        INSERT_FRONT = 0x0000'0001,
-        INSERT_BACK = 0x0000'0010,
-        INSERT_INDEXED = 0x0000'0100,
-        ACCESS_ELEMENT = 0x0000'1000,
-        EMPLACE = 0x0001'0000,
-        DELETE_FRONT = 0x0010'0000,
-        DELETE_BACK = 0x0100'0000,
-        DELETE_INDEXED = 0x1000'0000,
+        INSERT_FRONT = 0x0000'0001, /// INSERT_FRONT corresponds to insertion operations at the beginning
+        INSERT_BACK = 0x0000'0010, /// INSERT_BACK corresponds to insertion operations at the end
+        INSERT_INDEXED = 0x0000'0100, /// INSERT_INDEXED corresponds to insertion operations by index
+        ACCESS_ELEMENT = 0x0000'1000, /// ACCESS_ELEMENT corresponds to access operations to the element
+        EMPLACE = 0x0001'0000, /// EMPLACE corresponds to the operations of on-site construction of the element
+        DELETE_FRONT = 0x0010'0000, /// DELETE_FRONT corresponds to deletion operations from the beginning
+        DELETE_BACK = 0x0100'0000, /// DELETE_BACK corresponds to end deletion operations
+        DELETE_INDEXED = 0x1000'0000, /// DELETE_INDEXED corresponds to deletion operations by index
     };
 
     /**
@@ -121,6 +113,7 @@ namespace sequence {
     /**
      * @brief set provided operation to original value
      * @param availableFunctions original value
+     * @param valueToSet value which will be set
      * */
     always_inline AvailableFunctions
     setOperation(AvailableFunctions availableFunctions, AvailableFunctions valueToSet) {
@@ -185,6 +178,7 @@ namespace sequence {
     /**
      * @brief check provided operation for availability
      * @param availableFunctions original value
+     * @param valueToCheck value is checking for
      * @tparam T used to check if provided value is a part of <b>AvailableFunctions</b> enum
      * */
     template<AvailableFunctionsType T>

@@ -13,8 +13,6 @@
 /**
  * @class ContainerPreparer
  * @brief Used to generate vector of container's functions. This class was created, to reduce delays while accessing functions from container under test
- * @var <b>func_ptrs</b> vector of container's functions
- * @var <b>availableFunctions</b> is used to check if the container under test has methods
  * */
 template<class T>
 class ContainerPreparer {
@@ -36,7 +34,13 @@ public:
     virtual void init();
 
 private:
+    /**
+     * @brief vector of container's functions
+     * */
     std::vector<std::function<void(T &, int, int)>> func_ptrs;
+    /**
+     * @brief is used to check if the container under test has methods
+     * */
     sequence::AvailableFunctions availableFunctions;
 };
 
