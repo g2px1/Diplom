@@ -107,9 +107,9 @@ Inheritance diagram for ContainerTest&lt; T &gt;:</div>
  <div class="center">
   <img src="classContainerTest.png" usemap="#ContainerTest_3C_20T_20_3E_map" alt=""/>
   <map id="ContainerTest_3C_20T_20_3E_map" name="ContainerTest_3C_20T_20_3E_map">
-<area href="classAssociativeTester.html" title="Used for testing associative containers, e.g std::set, std::multiset, std::map, std::multimap,..." alt="AssociativeTester&lt; T &gt;" shape="rect" coords="0,56,189,80"/>
-<area href="classSequenceContainerTester.html" title="Used for testing sequence containers, e.g std::vector, std::array, std::list, std::forward_list,..." alt="SequenceContainerTester&lt; T &gt;" shape="rect" coords="199,56,388,80"/>
-<area href="classTreeTester.html" title="Used for testing trees." alt="TreeTester&lt; T &gt;" shape="rect" coords="398,56,587,80"/>
+<area href="classAssociativeTester.html" title="Used for testing associative containers, e.g std::set, std::multiset, std::map, std::multimap,..." alt="AssociativeTester&lt; T &gt;" shape="rect" coords="0,56,207,80"/>
+<area href="classSequenceContainerTester.html" title="Used for testing sequence containers, e.g std::vector, std::array, std::list, std::forward_list,..." alt="SequenceContainerTester&lt; T, V &gt;" shape="rect" coords="217,56,424,80"/>
+<area href="classTreeTester.html" title="Used for testing trees." alt="TreeTester&lt; T &gt;" shape="rect" coords="434,56,641,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -124,19 +124,14 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a38888657bd6496dc1a1a1a2e67359c46"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContainerTest.html#a38888657bd6496dc1a1a1a2e67359c46">container</a></td></tr>
+<tr class="memdesc:a38888657bd6496dc1a1a1a2e67359c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">container to test  <br /></td></tr>
 <tr class="separator:a38888657bd6496dc1a1a1a2e67359c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
 class ContainerTest&lt; T &gt;</div><p>Basic class for testing all types of containers. Stores container itself. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">container</td><td>container to test </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="ContainerTest_8h_source.html#l00018">18</a> of file <a class="el" href="ContainerTest_8h_source.html">ContainerTest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ContainerTest_8h_source.html#l00016">16</a> of file <a class="el" href="ContainerTest_8h_source.html">ContainerTest.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5cccf4677f8284fc2b3a6fd120ad3acf" name="a5cccf4677f8284fc2b3a6fd120ad3acf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5cccf4677f8284fc2b3a6fd120ad3acf">&#9670;&#160;</a></span>ContainerTest()</h2>
@@ -164,7 +159,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ContainerTest_8cpp_source.html#l00008">8</a> of file <a class="el" href="ContainerTest_8cpp_source.html">ContainerTest.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ContainerTest_8h_source.html#l00104">104</a> of file <a class="el" href="ContainerTest_8h_source.html">ContainerTest.h</a>.</p>
 
 </div>
 </div>
@@ -196,7 +191,7 @@ template&lt;class T &gt; </div>
 
 <p>begin test </p>
 
-<p>Implemented in <a class="el" href="classSequenceContainerTester.html#a12c042192c45c1311c18f0ab8a3b1f91">SequenceContainerTester&lt; T &gt;</a>, <a class="el" href="classAssociativeTester.html#aba97a721bdf92fe5a0d29d18ab848526">AssociativeTester&lt; T &gt;</a>, and <a class="el" href="classTreeTester.html#a99eaee817c06b209989adc3e5056bc29">TreeTester&lt; T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classSequenceContainerTester.html#a3c41f335fc424b3d01a9425b0fe0234e">SequenceContainerTester&lt; T, V &gt;</a>, <a class="el" href="classAssociativeTester.html#aba97a721bdf92fe5a0d29d18ab848526">AssociativeTester&lt; T &gt;</a>, and <a class="el" href="classTreeTester.html#a99eaee817c06b209989adc3e5056bc29">TreeTester&lt; T &gt;</a>.</p>
 
 </div>
 </div>
@@ -223,13 +218,14 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ContainerTest_8h_source.html#l00028">28</a> of file <a class="el" href="ContainerTest_8h_source.html">ContainerTest.h</a>.</p>
+<p>container to test </p>
+
+<p class="definition">Definition at line <a class="el" href="ContainerTest_8h_source.html#l00030">30</a> of file <a class="el" href="ContainerTest_8h_source.html">ContainerTest.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/<a class="el" href="ContainerTest_8h_source.html">ContainerTest.h</a></li>
-<li>/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/<a class="el" href="ContainerTest_8cpp_source.html">ContainerTest.cpp</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/containerTest/<a class="el" href="ContainerTest_8h_source.html">ContainerTest.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -237,7 +233,7 @@ template&lt;class T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classContainerTest.html">ContainerTest</a></li>
-    <li class="footer">Generated on Sat Sep 30 2023 21:43:42 for Diplom by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+    <li class="footer">Generated on Mon Oct 2 2023 22:13:11 for Diplom by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>
 </body>

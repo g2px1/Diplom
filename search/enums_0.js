@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sequenceoperations_0',['SequenceOperations',['../TestOperations_8h.html#a86cbd65aea7441017abadd5860131d05',1,'TestOperations.h']]]
+  ['availablefunctions_0',['AvailableFunctions',['../namespacesequence.html#a5c0c4c139fae84f97912b31e7efc0c29',1,'sequence']]]
 ];

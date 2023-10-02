@@ -121,24 +121,19 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a434d1b65aae53798d058481ba36f69e9"><td class="memItemLeft" align="right" valign="top">std::mt19937&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPRNG.html#a434d1b65aae53798d058481ba36f69e9">gen32</a></td></tr>
+<tr class="memdesc:a434d1b65aae53798d058481ba36f69e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mersenne twister 32-bit number generator.  <br /></td></tr>
 <tr class="separator:a434d1b65aae53798d058481ba36f69e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a266f363827bee3dd8112c3440063779a"><td class="memItemLeft" align="right" valign="top">std::mt19937_64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPRNG.html#a266f363827bee3dd8112c3440063779a">gen64</a></td></tr>
+<tr class="memdesc:a266f363827bee3dd8112c3440063779a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mersenne twister 64-bit number generator.  <br /></td></tr>
 <tr class="separator:a266f363827bee3dd8112c3440063779a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52cfcab61e2856bc0a641bed9887b819"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; int64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPRNG.html#a52cfcab61e2856bc0a641bed9887b819">seed</a></td></tr>
+<tr class="memdesc:a52cfcab61e2856bc0a641bed9887b819"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to <b>int64_t</b> which is used for generating random numbers  <br /></td></tr>
 <tr class="separator:a52cfcab61e2856bc0a641bed9887b819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Pseudo-random number generator. Provides interface to generate numbers: 32, 64 bit. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">seed</td><td>pointer to <b>int64_t</b> which is used for generating random numbers </td></tr>
-    <tr><td class="paramname">gen32</td><td>Mersenne twister 32-bit number generator </td></tr>
-    <tr><td class="paramname">gen64</td><td>Mersenne twister 64-bit number generator </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="PRNG_8h_source.html#l00017">17</a> of file <a class="el" href="PRNG_8h_source.html">PRNG.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PRNG_8h_source.html#l00014">14</a> of file <a class="el" href="PRNG_8h_source.html">PRNG.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1c3821112798470b83ac62e9e54acf4d" name="a1c3821112798470b83ac62e9e54acf4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c3821112798470b83ac62e9e54acf4d">&#9670;&#160;</a></span>PRNG() <span class="overload">[1/2]</span></h2>
@@ -165,7 +160,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PRNG_8cpp_source.html#l00020">20</a> of file <a class="el" href="PRNG_8cpp_source.html">PRNG.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00040">gen32</a>, and <a class="el" href="PRNG_8h_source.html#l00041">gen64</a>.</p>
+<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00048">gen32</a>, and <a class="el" href="PRNG_8h_source.html#l00052">gen64</a>.</p>
 
 </div>
 </div>
@@ -195,7 +190,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PRNG_8cpp_source.html#l00007">7</a> of file <a class="el" href="PRNG_8cpp_source.html">PRNG.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00040">gen32</a>, <a class="el" href="PRNG_8h_source.html#l00041">gen64</a>, and <a class="el" href="PRNG_8h_source.html#l00039">seed</a>.</p>
+<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00048">gen32</a>, <a class="el" href="PRNG_8h_source.html#l00052">gen64</a>, and <a class="el" href="PRNG_8h_source.html#l00044">seed</a>.</p>
 
 </div>
 </div>
@@ -237,7 +232,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PRNG_8cpp_source.html#l00026">26</a> of file <a class="el" href="PRNG_8cpp_source.html">PRNG.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00040">gen32</a>.</p>
+<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00048">gen32</a>.</p>
 
 </div>
 </div>
@@ -278,9 +273,9 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PRNG_8cpp_source.html#l00031">31</a> of file <a class="el" href="PRNG_8cpp_source.html">PRNG.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00041">gen64</a>.</p>
+<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00052">gen64</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00004">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
 
 </div>
 </div>
@@ -303,7 +298,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="PRNG_8cpp_source.html#l00013">13</a> of file <a class="el" href="PRNG_8cpp_source.html">PRNG.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00039">seed</a>.</p>
+<p class="reference">References <a class="el" href="PRNG_8h_source.html#l00044">seed</a>.</p>
 
 </div>
 </div>
@@ -328,7 +323,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PRNG_8h_source.html#l00040">40</a> of file <a class="el" href="PRNG_8h_source.html">PRNG.h</a>.</p>
+<p>Mersenne twister 32-bit number generator. </p>
+
+<p class="definition">Definition at line <a class="el" href="PRNG_8h_source.html#l00048">48</a> of file <a class="el" href="PRNG_8h_source.html">PRNG.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PRNG_8cpp_source.html#l00026">generateNumber32()</a>, and <a class="el" href="PRNG_8cpp_source.html#l00007">PRNG()</a>.</p>
 
@@ -354,7 +351,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PRNG_8h_source.html#l00041">41</a> of file <a class="el" href="PRNG_8h_source.html">PRNG.h</a>.</p>
+<p>Mersenne twister 64-bit number generator. </p>
+
+<p class="definition">Definition at line <a class="el" href="PRNG_8h_source.html#l00052">52</a> of file <a class="el" href="PRNG_8h_source.html">PRNG.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PRNG_8cpp_source.html#l00031">generateNumber64()</a>, and <a class="el" href="PRNG_8cpp_source.html#l00007">PRNG()</a>.</p>
 
@@ -380,15 +379,17 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PRNG_8h_source.html#l00039">39</a> of file <a class="el" href="PRNG_8h_source.html">PRNG.h</a>.</p>
+<p>pointer to <b>int64_t</b> which is used for generating random numbers </p>
+
+<p class="definition">Definition at line <a class="el" href="PRNG_8h_source.html#l00044">44</a> of file <a class="el" href="PRNG_8h_source.html">PRNG.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="PRNG_8cpp_source.html#l00013">getSeed()</a>, and <a class="el" href="PRNG_8cpp_source.html#l00007">PRNG()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/<a class="el" href="PRNG_8h_source.html">PRNG.h</a></li>
-<li>/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/<a class="el" href="PRNG_8cpp_source.html">PRNG.cpp</a></li>
+<li>/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/random/<a class="el" href="PRNG_8h_source.html">PRNG.h</a></li>
+<li>/Users/kirillzhukov/Documents/GitHub/Diplom/diplom/random/<a class="el" href="PRNG_8cpp_source.html">PRNG.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -396,7 +397,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classPRNG.html">PRNG</a></li>
-    <li class="footer">Generated on Sat Sep 30 2023 21:43:42 for Diplom by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+    <li class="footer">Generated on Mon Oct 2 2023 22:13:11 for Diplom by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>
 </body>

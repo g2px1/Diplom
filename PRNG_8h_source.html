@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Diplom: /Users/kirillzhukov/Documents/GitHub/Diplom/diplom/PRNG.h Source File</title>
+<title>Diplom: /Users/kirillzhukov/Documents/GitHub/Diplom/diplom/random/PRNG.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,27 +101,32 @@ $(document).ready(function(){initNavTree('PRNG_8h_source.html',''); initResizabl
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;random&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classPRNG.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="classPRNG.html">PRNG</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classPRNG.html#a1c3821112798470b83ac62e9e54acf4d">PRNG</a>();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    [[maybe_unused]] <span class="keyword">explicit</span> <a class="code hl_function" href="classPRNG.html#a1c3821112798470b83ac62e9e54acf4d">PRNG</a>(int64_t userSeed);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    [[nodiscard]] int64_t <a class="code hl_function" href="classPRNG.html#a8579c18d2a57c41852c97c4e1016a0f8">getSeed</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classPRNG.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="classPRNG.html">PRNG</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classPRNG.html#a1c3821112798470b83ac62e9e54acf4d">PRNG</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    [[maybe_unused]] <span class="keyword">explicit</span> <a class="code hl_function" href="classPRNG.html#a1c3821112798470b83ac62e9e54acf4d">PRNG</a>(int64_t userSeed);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    [[nodiscard]] int64_t <a class="code hl_function" href="classPRNG.html#a8579c18d2a57c41852c97c4e1016a0f8">getSeed</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    int32_t <a class="code hl_function" href="classPRNG.html#a71de21076e5ca476b035245c6c6906bb">generateNumber32</a>(<span class="keywordtype">int</span> min = INT32_MIN, <span class="keywordtype">int</span> max = INT32_MAX);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    int64_t <a class="code hl_function" href="classPRNG.html#a08d3b9537f650bedebade977616b4d7f">generateNumber64</a>(int64_t min = INT64_MIN, int64_t max = INT64_MAX);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classPRNG.html#a52cfcab61e2856bc0a641bed9887b819">   39</a></span>    std::unique_ptr&lt;int64_t&gt; <a class="code hl_variable" href="classPRNG.html#a52cfcab61e2856bc0a641bed9887b819">seed</a>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classPRNG.html#a434d1b65aae53798d058481ba36f69e9">   40</a></span>    std::mt19937 <a class="code hl_variable" href="classPRNG.html#a434d1b65aae53798d058481ba36f69e9">gen32</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classPRNG.html#a266f363827bee3dd8112c3440063779a">   41</a></span>    std::mt19937_64 <a class="code hl_variable" href="classPRNG.html#a266f363827bee3dd8112c3440063779a">gen64</a>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">//DIPLOM_PRNG_H</span></div>
-<div class="ttc" id="aclassPRNG_html"><div class="ttname"><a href="classPRNG.html">PRNG</a></div><div class="ttdoc">Pseudo-random number generator. Provides interface to generate numbers: 32, 64 bit.</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8h_source.html#l00017">PRNG.h:17</a></div></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    int64_t <a class="code hl_function" href="classPRNG.html#a08d3b9537f650bedebade977616b4d7f">generateNumber64</a>(int64_t min = INT64_MIN, int64_t max = INT64_MAX);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classPRNG.html#a52cfcab61e2856bc0a641bed9887b819">   44</a></span>    std::unique_ptr&lt;int64_t&gt; <a class="code hl_variable" href="classPRNG.html#a52cfcab61e2856bc0a641bed9887b819">seed</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classPRNG.html#a434d1b65aae53798d058481ba36f69e9">   48</a></span>    std::mt19937 <a class="code hl_variable" href="classPRNG.html#a434d1b65aae53798d058481ba36f69e9">gen32</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classPRNG.html#a266f363827bee3dd8112c3440063779a">   52</a></span>    std::mt19937_64 <a class="code hl_variable" href="classPRNG.html#a266f363827bee3dd8112c3440063779a">gen64</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">//DIPLOM_PRNG_H</span></div>
+<div class="ttc" id="aclassPRNG_html"><div class="ttname"><a href="classPRNG.html">PRNG</a></div><div class="ttdoc">Pseudo-random number generator. Provides interface to generate numbers: 32, 64 bit.</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8h_source.html#l00014">PRNG.h:14</a></div></div>
 <div class="ttc" id="aclassPRNG_html_a08d3b9537f650bedebade977616b4d7f"><div class="ttname"><a href="classPRNG.html#a08d3b9537f650bedebade977616b4d7f">PRNG::generateNumber64</a></div><div class="ttdeci">int64_t generateNumber64(int64_t min=INT64_MIN, int64_t max=INT64_MAX)</div><div class="ttdoc">generateNumber64 returns random 64-bit number</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8cpp_source.html#l00031">PRNG.cpp:31</a></div></div>
 <div class="ttc" id="aclassPRNG_html_a1c3821112798470b83ac62e9e54acf4d"><div class="ttname"><a href="classPRNG.html#a1c3821112798470b83ac62e9e54acf4d">PRNG::PRNG</a></div><div class="ttdeci">PRNG()</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8cpp_source.html#l00020">PRNG.cpp:20</a></div></div>
-<div class="ttc" id="aclassPRNG_html_a266f363827bee3dd8112c3440063779a"><div class="ttname"><a href="classPRNG.html#a266f363827bee3dd8112c3440063779a">PRNG::gen64</a></div><div class="ttdeci">std::mt19937_64 gen64</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8h_source.html#l00041">PRNG.h:41</a></div></div>
-<div class="ttc" id="aclassPRNG_html_a434d1b65aae53798d058481ba36f69e9"><div class="ttname"><a href="classPRNG.html#a434d1b65aae53798d058481ba36f69e9">PRNG::gen32</a></div><div class="ttdeci">std::mt19937 gen32</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8h_source.html#l00040">PRNG.h:40</a></div></div>
-<div class="ttc" id="aclassPRNG_html_a52cfcab61e2856bc0a641bed9887b819"><div class="ttname"><a href="classPRNG.html#a52cfcab61e2856bc0a641bed9887b819">PRNG::seed</a></div><div class="ttdeci">std::unique_ptr&lt; int64_t &gt; seed</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8h_source.html#l00039">PRNG.h:39</a></div></div>
+<div class="ttc" id="aclassPRNG_html_a266f363827bee3dd8112c3440063779a"><div class="ttname"><a href="classPRNG.html#a266f363827bee3dd8112c3440063779a">PRNG::gen64</a></div><div class="ttdeci">std::mt19937_64 gen64</div><div class="ttdoc">Mersenne twister 64-bit number generator.</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8h_source.html#l00052">PRNG.h:52</a></div></div>
+<div class="ttc" id="aclassPRNG_html_a434d1b65aae53798d058481ba36f69e9"><div class="ttname"><a href="classPRNG.html#a434d1b65aae53798d058481ba36f69e9">PRNG::gen32</a></div><div class="ttdeci">std::mt19937 gen32</div><div class="ttdoc">Mersenne twister 32-bit number generator.</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8h_source.html#l00048">PRNG.h:48</a></div></div>
+<div class="ttc" id="aclassPRNG_html_a52cfcab61e2856bc0a641bed9887b819"><div class="ttname"><a href="classPRNG.html#a52cfcab61e2856bc0a641bed9887b819">PRNG::seed</a></div><div class="ttdeci">std::unique_ptr&lt; int64_t &gt; seed</div><div class="ttdoc">pointer to int64_t which is used for generating random numbers</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8h_source.html#l00044">PRNG.h:44</a></div></div>
 <div class="ttc" id="aclassPRNG_html_a71de21076e5ca476b035245c6c6906bb"><div class="ttname"><a href="classPRNG.html#a71de21076e5ca476b035245c6c6906bb">PRNG::generateNumber32</a></div><div class="ttdeci">int32_t generateNumber32(int min=INT32_MIN, int max=INT32_MAX)</div><div class="ttdoc">generateNumber32 returns random 32-bit number</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8cpp_source.html#l00026">PRNG.cpp:26</a></div></div>
 <div class="ttc" id="aclassPRNG_html_a8579c18d2a57c41852c97c4e1016a0f8"><div class="ttname"><a href="classPRNG.html#a8579c18d2a57c41852c97c4e1016a0f8">PRNG::getSeed</a></div><div class="ttdeci">int64_t getSeed() const</div><div class="ttdoc">getSeed - getter for seed</div><div class="ttdef"><b>Definition:</b> <a href="PRNG_8cpp_source.html#l00013">PRNG.cpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -129,8 +134,8 @@ $(document).ready(function(){initNavTree('PRNG_8h_source.html',''); initResizabl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b763e14e8724badc6ad3f1a3f191570f.html">diplom</a></li><li class="navelem"><a class="el" href="PRNG_8h.html">PRNG.h</a></li>
-    <li class="footer">Generated on Sat Sep 30 2023 21:43:42 for Diplom by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+    <li class="navelem"><a class="el" href="dir_b763e14e8724badc6ad3f1a3f191570f.html">diplom</a></li><li class="navelem"><a class="el" href="dir_402a72e0134e8dcdc4738494c720b468.html">random</a></li><li class="navelem"><a class="el" href="PRNG_8h.html">PRNG.h</a></li>
+    <li class="footer">Generated on Mon Oct 2 2023 22:13:11 for Diplom by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>
 </body>

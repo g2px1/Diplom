@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['seed_0',['seed',['../classPRNG.html#a52cfcab61e2856bc0a641bed9887b819',1,'PRNG']]],
-  ['start_5ftime_1',['start_time',['../classBasicDurationCounter.html#a918a9a2810ad7469c86d79848cd3a867',1,'BasicDurationCounter']]]
+  ['gen32_0',['gen32',['../classPRNG.html#a434d1b65aae53798d058481ba36f69e9',1,'PRNG']]],
+  ['gen64_1',['gen64',['../classPRNG.html#a266f363827bee3dd8112c3440063779a',1,'PRNG']]]
 ];
