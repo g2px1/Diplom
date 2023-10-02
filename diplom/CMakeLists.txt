@@ -3,11 +3,22 @@ project(diplom)
 
 set(CMAKE_CXX_STANDARD 20)
 
+include_directories(
+        random
+        duration
+        operations
+        containerTest
+        thread
+)
+
 add_executable(diplom main.cpp
-        ContainerTest.cpp
-        ContainerTest.h
-        PRNG.cpp
-        PRNG.h
-        DurationCounter.cpp
-        DurationCounter.h
-        TestOperations.h)
+        containerTest/ContainerTest.h
+        random/PRNG.cpp
+        random/PRNG.h
+        duration/DurationCounter.cpp
+        duration/DurationCounter.h
+        operations/TestOperations.h
+        thread/Pool.h
+        operations/ContainerPreparer.h
+        operations/ContainerFunctions.h
+)

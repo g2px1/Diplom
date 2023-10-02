@@ -12,6 +12,7 @@
  * @class BasicDurationCounter
  * @brief Start time counting after initialization
  * @details Should be stopped manually by using necessary function
+ * @var <b>start_time start</b> time of test
  * */
 class BasicDurationCounter {
 public:
@@ -33,10 +34,17 @@ private:
  * @class LogDuration
  * @brief Prints total elapsed time while destructor called in ms
  * @details Doesn't need any functions to measure time
+ * @var <b>id</b> name of test
  * */
 class LogDuration : public BasicDurationCounter {
 public:
+    /**
+     * @brief Constructor for class
+     * */
     explicit LogDuration(std::string name) : id(std::move(name)) {}
+    /**
+     * @brief Destructor for class
+     * */
     ~LogDuration() override {
         const auto end_time = std::chrono::steady_clock::now();
         const auto dur = end_time - this->start_time;
