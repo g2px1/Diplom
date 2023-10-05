@@ -116,7 +116,7 @@ namespace sequence {
      * @param valueToSet value which will be set
      * */
     always_inline AvailableFunctions
-    setOperation(AvailableFunctions availableFunctions, AvailableFunctions valueToSet) {
+    addOperation(AvailableFunctions availableFunctions, AvailableFunctions valueToSet) {
         return static_cast<AvailableFunctions>(availableFunctions | valueToSet);
     }
     /**
@@ -185,5 +185,31 @@ namespace sequence {
     always_inline bool hasOperation(AvailableFunctions availableFunctions, T valueToCheck) {
         return static_cast<bool>(availableFunctions & valueToCheck);
     }
+
+    class AvailableFunctionsBuilder {
+    public:
+        AvailableFunctionsBuilder() = default;
+    public:
+        AvailableFunctionsBuilder *addFunction(sequence::AvailableFunctions function);
+        AvailableFunctionsBuilder *addAll();
+        sequence::AvailableFunctions build();
+    private:
+        sequence::AvailableFunctions availableFunctions;
+    };
+
+    AvailableFunctionsBuilder *AvailableFunctionsBuilder::addFunction(sequence::AvailableFunctions function) {
+        sequence::addOperation(this->availableFunctions, function);
+        return this;
+    }
+
+    sequence::AvailableFunctions AvailableFunctionsBuilder::build() {
+        return this->availableFunctions;
+    }
+
+    AvailableFunctionsBuilder *AvailableFunctionsBuilder::addAll() {
+        addAllOperations(this->availableFunctions);
+        return this;
+    }
 }
+
 #endif //DIPLOM_CONTAINERFUNCTIONS_H

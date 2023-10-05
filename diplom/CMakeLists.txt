@@ -9,6 +9,7 @@ include_directories(
         operations
         containerTest
         thread
+        dataGenerator
 )
 
 add_executable(diplom main.cpp
@@ -21,4 +22,5 @@ add_executable(diplom main.cpp
         thread/Pool.h
         operations/ContainerPreparer.h
         operations/ContainerFunctions.h
+        dataGenerator/Generator.h
 )

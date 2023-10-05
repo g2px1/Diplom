@@ -87,8 +87,9 @@ Pool<U, V, T>::Pool(std::vector<U> &&data, V &&container) {
                 cv.wait(lock);
             }
 
-            int result = 0;
-            this->promise[i].set_value(result);
+//            int result = 0;
+//            this->promise[i].set_value(result);
+
         });
     }
 }
