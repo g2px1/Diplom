@@ -33,6 +33,12 @@ public:
      * @param container itself
      * */
     Pool(std::vector<U> &&data, V &&container);
+
+public:
+    /**
+     * @brief used to start thread function
+     * */
+    void startThreads();
 private:
     /**
      * @brief thread pool itself
@@ -50,7 +56,25 @@ private:
      * @brief test for container
      * */
     std::unique_ptr<ContainerTest<V>> containerTest;
+    /**
+     * @brief mutex
+     * */
+    std::mutex mtx;
+    /**
+     * @brief used to notify waiting threads
+     * */
+    std::condition_variable cv;
+    /**
+     * @brief used to start threads
+     * */
+    bool start = false;
 };
+
+template<class U, class V, std::size_t T>
+void Pool<U, V, T>::startThreads() {
+    this->start = true;
+    this->cv.notify_all();
+}
 
 template<class U, class V, std::size_t T>
 Pool<U, V, T>::Pool(std::vector<U> &&data, V &&container) {
@@ -58,7 +82,12 @@ Pool<U, V, T>::Pool(std::vector<U> &&data, V &&container) {
     for (int64_t i = 0; i < T; i++) {
         this->future[i] = this->promise[i].get_future();
         this->pool[i] = std::thread([&, data] {
-            int result = threadFunction();
+            std::unique_lock<std::mutex> lock(mtx);
+            while (!this->start) {
+                cv.wait(lock);
+            }
+
+            int result = 0;
             this->promise[i].set_value(result);
         });
     }
