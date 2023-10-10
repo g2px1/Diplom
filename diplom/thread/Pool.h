@@ -9,6 +9,7 @@
 #include <array>
 #include <thread>
 #include <future>
+#include <iostream>
 #include "ContainerTest.h"
 
 using std::thread;
@@ -21,24 +22,28 @@ int64_t threadFunction() {
  * @class Pool
  * @brief Pool contains vectors of <b>std::threads</b>, <b>std::promise</b>, <b>std::future</b> to handle threads and time measurements from test/-s
  * @tparam U type of data which is used in tests by threads
- * @tparam V container itself
+ * @tparam V container test
  * @tparam T size of threads pool
  * */
-template<class U, class V, std::size_t T>
+template<class V, std::size_t T>
 class Pool {
 public:
     /**
      * @brief Constructor for class
      * @param data vector of test data
-     * @param container itself
+     * @param containerTest container's test
      * */
-    Pool(std::vector<U> &&data, V &&container);
+    explicit Pool(V &containerTest);
 
 public:
     /**
      * @brief used to start thread function
      * */
     void startThreads();
+    /**
+     * @brief joins threads
+     * */
+    void joinThreads();
 private:
     /**
      * @brief thread pool itself
@@ -55,7 +60,7 @@ private:
     /**
      * @brief test for container
      * */
-    std::unique_ptr<ContainerTest<V>> containerTest;
+    V containerTest;
     /**
      * @brief mutex
      * */
@@ -70,26 +75,31 @@ private:
     bool start = false;
 };
 
-template<class U, class V, std::size_t T>
-void Pool<U, V, T>::startThreads() {
+template<class V, std::size_t T>
+void Pool<V, T>::joinThreads() {
+    for (int64_t i = 0; i < T - 1; i++) {
+        this->pool[i].join();
+    }
+}
+
+template<class V, std::size_t T>
+void Pool<V, T>::startThreads() {
     this->start = true;
     this->cv.notify_all();
 }
 
-template<class U, class V, std::size_t T>
-Pool<U, V, T>::Pool(std::vector<U> &&data, V &&container) {
-    this->containerTest = ContainerTest<V>(container);
-    for (int64_t i = 0; i < T; i++) {
+template<class V, std::size_t T>
+Pool<V, T>::Pool(V &containerTest) : containerTest(containerTest), mtx() {
+    for (int64_t i = 0; i < T - 1; i++) {
         this->future[i] = this->promise[i].get_future();
-        this->pool[i] = std::thread([&, data] {
+        this->pool[i] = std::thread([&] {
+#if 0
             std::unique_lock<std::mutex> lock(mtx);
-            while (!this->start) {
-                cv.wait(lock);
-            }
-
-//            int result = 0;
-//            this->promise[i].set_value(result);
-
+            cv.wait(lock, [this] { return this->start; });
+#endif
+            for (int i = 0; i < 5; i++)
+//                std::cout << "thread: " << std::this_thread::get_id() << '\n';
+            this->containerTest.test();
         });
     }
 }

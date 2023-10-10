@@ -12,6 +12,7 @@
 
 /**
  * @class ContainerPreparer
+ * @tparam T container
  * @brief Used to generate vector of container's functions. This class was created, to reduce delays while accessing functions from container under test
  * */
 template<class T>
@@ -25,7 +26,7 @@ public:
 
 public:
     /**
-     * @brief returns prepared vector of container's operations
+     * @brief returns prepared vector of container's dataSet
      * */
     [[nodiscard]] const std::vector<std::function<void(T &, int, int)>> &getFuncPtrs() const;
     /**
@@ -33,11 +34,16 @@ public:
      * */
     virtual void init();
 
+    virtual std::size_t getSize();
 private:
     /**
      * @brief vector of container's functions
      * */
     std::vector<std::function<void(T &, int, int)>> func_ptrs;
+    /**
+     * @brief vector of operations types
+     * */
+    std::vector<sequence::AvailableFunctions> functionTypes;
     /**
      * @brief is used to check if the container under test has methods
      * */
@@ -45,39 +51,52 @@ private:
 };
 
 template<class T>
+std::size_t ContainerPreparer<T>::getSize() {
+    return this->func_ptrs.size();
+}
+
+template<class T>
 void ContainerPreparer<T>::init() {
-    // Now, we're checking available operations. We need to do this, to minimize delays
+    // Now, we're checking available dataSet. We need to do this, to minimize delays
     if (sequence::hasInsertFront(availableFunctions)) {
         this->func_ptrs.emplace_back(
-                [](std::vector<int> &v, int value, int position = 0) { v.insert(v.begin(), value); });
+                [](T &v, int value, int position = 0) { v.insert(v.begin(), value); });
+        this->functionTypes.push_back(sequence::AvailableFunctions::INSERT_FRONT);
     }
     if (sequence::hasInsertBack(availableFunctions)) {
         this->func_ptrs.emplace_back(
-                [](std::vector<int> &v, int value, int position = 0) { v.insert(v.begin() + (v.size() - 1), value); });
+                [](T &v, int value, int position = 0) { v.insert(v.begin() + (v.size() - 1), value); });
+        this->functionTypes.push_back(sequence::AvailableFunctions::INSERT_BACK);
     }
     if (sequence::hasInsertIndexed(availableFunctions)) {
         this->func_ptrs.emplace_back(
-                [](std::vector<int> &v, int value, int position = 0) { v.insert(v.begin() + position, value); });
+                [](T &v, int value, int position = 0) { v.insert(v.begin() + position, value); });
+        this->functionTypes.push_back(sequence::AvailableFunctions::INSERT_INDEXED);
     }
     if (sequence::hasAccessElement(availableFunctions)) {
         this->func_ptrs.emplace_back(
-                [](std::vector<int> &v, int value, int position = 0) { return v.at(position); });
+                [](T &v, int value, int position = 0) { return v.at(position); });
+        this->functionTypes.push_back(sequence::AvailableFunctions::ACCESS_ELEMENT);
     }
     if (sequence::hasEmplace(availableFunctions)) {
         this->func_ptrs.emplace_back(
-                [](std::vector<int> &v, int value, int position = 0) { return v.emplace_back(value); });
+                [](T &v, int value, int position = 0) { return v.emplace_back(value); });
+        this->functionTypes.push_back(sequence::AvailableFunctions::EMPLACE);
     }
     if (sequence::hasDeleteFront(availableFunctions)) {
         this->func_ptrs.emplace_back(
-                [](std::vector<int> &v, int value, int position = 0) { return v.erase(v.begin()); });
+                [](T &v, int value, int position = 0) { return v.erase(v.begin()); });
+        this->functionTypes.push_back(sequence::AvailableFunctions::DELETE_FRONT);
     }
-    if (sequence::hasDeleteFront(availableFunctions)) {
+    if (sequence::hasDeleteBack(availableFunctions)) {
         this->func_ptrs.emplace_back(
-                [](std::vector<int> &v, int value, int position = 0) { return v.erase(v.begin() + (v.size() - 1)); });
+                [](T &v, int value, int position = 0) { return v.erase(v.begin() + (v.size() - 1)); });
+        this->functionTypes.push_back(sequence::AvailableFunctions::DELETE_BACK);
     }
     if (sequence::hasDeleteIndexed(availableFunctions)) {
         this->func_ptrs.emplace_back(
-                [](std::vector<int> &v, int value, int position = 0) { return v.erase(v.begin() + position); });
+                [](T &v, int value, int position = 0) { return v.erase(v.begin() + position); });
+        this->functionTypes.push_back(sequence::AvailableFunctions::DELETE_INDEXED);
     }
 }
 

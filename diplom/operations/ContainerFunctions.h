@@ -7,6 +7,7 @@
 
 #include <cstdint>
 #include <type_traits>
+#include <ostream>
 
 #ifdef _MSC_VER
 #   define always_inline __forceinline
@@ -27,21 +28,22 @@ namespace sequence {
      * @enum AvailableFunctions
      * */
     enum AvailableFunctions : uint32_t {
-        INSERT_FRONT = 0x0000'0001, /// INSERT_FRONT corresponds to insertion operations at the beginning
-        INSERT_BACK = 0x0000'0010, /// INSERT_BACK corresponds to insertion operations at the end
-        INSERT_INDEXED = 0x0000'0100, /// INSERT_INDEXED corresponds to insertion operations by index
-        ACCESS_ELEMENT = 0x0000'1000, /// ACCESS_ELEMENT corresponds to access operations to the element
-        EMPLACE = 0x0001'0000, /// EMPLACE corresponds to the operations of on-site construction of the element
-        DELETE_FRONT = 0x0010'0000, /// DELETE_FRONT corresponds to deletion operations from the beginning
-        DELETE_BACK = 0x0100'0000, /// DELETE_BACK corresponds to end deletion operations
-        DELETE_INDEXED = 0x1000'0000, /// DELETE_INDEXED corresponds to deletion operations by index
+        INSERT_FRONT = 0x0000'0001, /// INSERT_FRONT corresponds to insertion dataSet at the beginning
+        INSERT_BACK = 0x0000'0010, /// INSERT_BACK corresponds to insertion dataSet at the end
+        INSERT_INDEXED = 0x0000'0100, /// INSERT_INDEXED corresponds to insertion dataSet by index
+        ACCESS_ELEMENT = 0x0000'1000, /// ACCESS_ELEMENT corresponds to access dataSet to the element
+        EMPLACE = 0x0001'0000, /// EMPLACE corresponds to the dataSet of on-site construction of the element
+        DELETE_FRONT = 0x0010'0000, /// DELETE_FRONT corresponds to deletion dataSet from the beginning
+        DELETE_BACK = 0x0100'0000, /// DELETE_BACK corresponds to end deletion dataSet
+        DELETE_INDEXED = 0x1000'0000, /// DELETE_INDEXED corresponds to deletion dataSet by index
+
     };
 
     /**
      * @brief add <b>INSERT_FRONT</b> operation to original value
      * @param availableFunctions original value
      * */
-    always_inline AvailableFunctions addInsertFrontOperation(AvailableFunctions availableFunctions) {
+    always_inline AvailableFunctions addInsertFrontOperation(AvailableFunctions& availableFunctions) {
         return static_cast<AvailableFunctions>(availableFunctions | AvailableFunctions::INSERT_FRONT);
     }
 
@@ -49,57 +51,57 @@ namespace sequence {
      * @brief add <b>INSERT_BACK</b> operation to original value
      * @param availableFunctions original value
      * */
-    always_inline AvailableFunctions addInsertBackOperation(AvailableFunctions availableFunctions) {
+    always_inline AvailableFunctions addInsertBackOperation(AvailableFunctions& availableFunctions) {
         return static_cast<AvailableFunctions>(availableFunctions | AvailableFunctions::INSERT_BACK);
     }
     /**
      * @brief add <b>INSERT_INDEXED</b> operation to original value
      * @param availableFunctions original value
      * */
-    always_inline AvailableFunctions addInsertIndexedOperation(AvailableFunctions availableFunctions) {
+    always_inline AvailableFunctions addInsertIndexedOperation(AvailableFunctions& availableFunctions) {
         return static_cast<AvailableFunctions>(availableFunctions | AvailableFunctions::INSERT_INDEXED);
     }
     /**
      * @brief add <b>ACCESS_ELEMENT</b> operation to original value
      * @param availableFunctions original value
      * */
-    always_inline AvailableFunctions addAccessElementOperation(AvailableFunctions availableFunctions) {
+    always_inline AvailableFunctions addAccessElementOperation(AvailableFunctions& availableFunctions) {
         return static_cast<AvailableFunctions>(availableFunctions | AvailableFunctions::ACCESS_ELEMENT);
     }
     /**
      * @brief add <b>EMPLACE</b> operation to original value
      * @param availableFunctions original value
      * */
-    always_inline AvailableFunctions addEmplaceOperation(AvailableFunctions availableFunctions) {
+    always_inline AvailableFunctions addEmplaceOperation(AvailableFunctions& availableFunctions) {
         return static_cast<AvailableFunctions>(availableFunctions | AvailableFunctions::EMPLACE);
     }
     /**
      * @brief add <b>DELETE_FRONT</b> operation to original value
      * @param availableFunctions original value
      * */
-    always_inline AvailableFunctions addDeleteFrontOperation(AvailableFunctions availableFunctions) {
+    always_inline AvailableFunctions addDeleteFrontOperation(AvailableFunctions& availableFunctions) {
         return static_cast<AvailableFunctions>(availableFunctions | AvailableFunctions::DELETE_FRONT);
     }
     /**
      * @brief add <b>DELETE_INDEXED</b> operation to original value
      * @param availableFunctions original value
      * */
-    always_inline AvailableFunctions addDeleteIndexedOperation(AvailableFunctions availableFunctions) {
+    always_inline AvailableFunctions addDeleteIndexedOperation(AvailableFunctions& availableFunctions) {
         return static_cast<AvailableFunctions>(availableFunctions | AvailableFunctions::DELETE_INDEXED);
     }
     /**
      * @brief add <b>DELETE_BACK</b> operation to original value
      * @param availableFunctions original value
      * */
-    always_inline AvailableFunctions addDeleteBackOperation(AvailableFunctions availableFunctions) {
+    always_inline AvailableFunctions addDeleteBackOperation(AvailableFunctions& availableFunctions) {
         return static_cast<AvailableFunctions>(availableFunctions | AvailableFunctions::DELETE_BACK);
     }
     /**
      * @brief add <b>INSERT_FRONT</b>, <b>INSERT_BACK</b>, <b>INSERT_INDEXED</b>, <b>ACCESS_ELEMENT</b>,
-     * <b>EMPLACE</b>, <b>DELETE_FRONT</b>, <b>DELETE_INDEXED</b>, <b>DELETE_BACK</b> operations to original value
+     * <b>EMPLACE</b>, <b>DELETE_FRONT</b>, <b>DELETE_INDEXED</b>, <b>DELETE_BACK</b> dataSet to original value
      * @param availableFunctions original value
      * */
-    always_inline AvailableFunctions addAllOperations(AvailableFunctions availableFunctions) {
+    always_inline AvailableFunctions addAllOperations(AvailableFunctions& availableFunctions) {
         return static_cast<AvailableFunctions>(availableFunctions |
                                                AvailableFunctions::INSERT_FRONT |
                                                AvailableFunctions::INSERT_BACK |
@@ -193,12 +195,13 @@ namespace sequence {
         AvailableFunctionsBuilder *addFunction(sequence::AvailableFunctions function);
         AvailableFunctionsBuilder *addAll();
         sequence::AvailableFunctions build();
+
     private:
         sequence::AvailableFunctions availableFunctions;
     };
 
     AvailableFunctionsBuilder *AvailableFunctionsBuilder::addFunction(sequence::AvailableFunctions function) {
-        sequence::addOperation(this->availableFunctions, function);
+        this->availableFunctions = sequence::addOperation(this->availableFunctions, function);
         return this;
     }
 
@@ -207,7 +210,7 @@ namespace sequence {
     }
 
     AvailableFunctionsBuilder *AvailableFunctionsBuilder::addAll() {
-        addAllOperations(this->availableFunctions);
+        this->availableFunctions = addAllOperations(this->availableFunctions);
         return this;
     }
 }
