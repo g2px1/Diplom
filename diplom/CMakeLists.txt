@@ -9,6 +9,7 @@ include_directories(
 )
 
 find_package(LibCDS REQUIRED)
+find_package(Boost REQUIRED COMPONENTS thread)
 
 add_executable(${PROJECT_NAME} main.cpp
         duration/DurationCounter.cpp
@@ -21,4 +22,6 @@ add_executable(${PROJECT_NAME} main.cpp
 
 target_link_libraries(${PROJECT_NAME}
         LibCDS::cds
+        Boost::boost
+        Boost::thread
 )

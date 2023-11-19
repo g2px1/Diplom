@@ -50,13 +50,13 @@ namespace test::framework::container {
                         this->container.push(operation_pair.second);
                     break;
                     case 0x1:
-                        this->container.pop();
+                        // this->container.pop();
                     break;
                     case 0x2:
-                        this->container.at(operation_pair.second);
+                        // this->container.at(operation_pair.second);
                     break;
                     case 0x3:
-                        this->container.insert(operation_pair.second);
+                        // this->container.insert(operation_pair.second);
                     break;
                 }
             }
