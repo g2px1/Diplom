@@ -1,7 +1,3 @@
-//
-// Created by Kirill Zhukov on 22.09.2023.
-//
-
 #include "DurationCounter.h"
 
 uint64_t BasicDurationCounter::finishManually() {

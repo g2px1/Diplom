@@ -1,7 +1,3 @@
-//
-// Created by Kirill Zhukov on 19.11.2023.
-//
-
 #ifndef GENERATOR_H
 #define GENERATOR_H
 #include <random>
