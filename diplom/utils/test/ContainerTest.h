@@ -1,7 +1,3 @@
-//
-// Created by Kirill Zhukov on 19.11.2023.
-//
-
 #ifndef CONTAINERTEST_H
 #define CONTAINERTEST_H
 #include <vector>

@@ -1,7 +1,3 @@
-//
-// Created by Kirill Zhukov on 22.09.2023.
-//
-
 #ifndef DIPLOM_DURATIONCOUNTER_H
 #define DIPLOM_DURATIONCOUNTER_H
 

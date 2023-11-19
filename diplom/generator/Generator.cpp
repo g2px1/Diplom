@@ -1,7 +1,3 @@
-//
-// Created by Kirill Zhukov on 19.11.2023.
-//
-
 #include "Generator.h"
 
 test::framework::Generator::Generator(uint8_t insert_percantage, uint8_t delete_percantage, uint8_t read_percantage,
