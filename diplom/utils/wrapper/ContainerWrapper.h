@@ -16,6 +16,8 @@ namespace test::framework::wrapper {
 
     class ContainerWrapper {
     public:
+        virtual ~ContainerWrapper() = default;
+
         virtual void insert(void* value, operationType opType) = 0;
 
         virtual void del(void* value, operationType opType) = 0;

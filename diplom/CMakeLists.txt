@@ -20,6 +20,8 @@ add_executable(${PROJECT_NAME} main.cpp
         utils/test/ContainerTest.h
         utils/wrapper/ContainerWrapper.cpp
         utils/wrapper/ContainerWrapper.h
+        utils/wrapper/QueueWrapper.cpp
+        utils/wrapper/QueueWrapper.h
 )
 
 target_link_libraries(${PROJECT_NAME}
