@@ -4,10 +4,10 @@
 
 #include "Generator.h"
 
-test::framework::Generator::Generator(uint8_t push_percantage, uint8_t pop_percantage, uint8_t read_percantage,
+test::framework::Generator::Generator(uint8_t push_percantage, uint8_t delete_percantage, uint8_t read_percantage,
                                       uint8_t write_percantage, uint64_t operations_quantity) : push(push_percantage),
-    pop(pop_percantage), read(read_percantage), write(write_percantage), operations_q(operations_quantity) {
-    int8_t total_distribution = push_percantage + pop_percantage + read_percantage + write_percantage;
+    pop(delete_percantage), read(read_percantage), write(write_percantage), operations_q(operations_quantity) {
+    int8_t total_distribution = push_percantage + delete_percantage + read_percantage + write_percantage;
     if (total_distribution != 100) {
         std::cerr << "Wrong distribution: " << static_cast<int>(total_distribution) << "%, should be 100%";
     }
@@ -73,7 +73,7 @@ char* test::framework::Generator::op2s(int16_t op) {
         case 0x0:
             return (char *)"PUSH";
         case 0x1:
-            return (char *)"POP";
+            return (char *)"DELETE";
         case 0x2:
             return (char *)"READ";
         case 0x3:
