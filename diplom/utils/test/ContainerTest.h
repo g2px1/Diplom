@@ -26,6 +26,8 @@ namespace test::framework::container {
         }
 
     public:
+	/// @brief Starts the container test
+	/// @return key - int16_t is a command index, value - is array of length 2, first value is frequency of operation, second is total time spend on that operation
         virtual std::unordered_map<int16_t, std::array<int64_t, 2>> test();
 
     private:
