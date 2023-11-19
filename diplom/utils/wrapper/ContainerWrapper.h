@@ -8,9 +8,10 @@
 
 namespace test::framework::wrapper {
     enum operationType {
-        FRONT = 0x0,
+        FRONT   = 0x0,
         INDEXED = 0x1,
-        DELETE = 0x2
+        DELETE  = 0x2,
+        DEFAULT = 0x3
     };
 
     class ContainerWrapper {
