@@ -8,9 +8,9 @@
 #include "ContainerWrapper.h"
 
 template<class Queue>
-class QueueWrapper : public test::framework::wrapper::ContainerWrapper {
+class QueueWrapper final : public test::framework::wrapper::ContainerWrapper {
 public:
-    ~QueueWrapper() override;
+    ~QueueWrapper() override = default;
 
     void insert(void* value, test::framework::wrapper::operationType opType) override;
 
