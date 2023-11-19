@@ -4,17 +4,21 @@ project(diplom)
 set(CMAKE_CXX_STANDARD 20)
 
 include_directories(
-        random
         duration
-        operations
-        containerTest
-        thread
-        testGenerator
+        generator
 )
+
+find_package(LibCDS REQUIRED)
 
 add_executable(${PROJECT_NAME} main.cpp
         duration/DurationCounter.cpp
         duration/DurationCounter.h
         generator/Generator.cpp
         generator/Generator.h
+        utils/test/ContainerTest.cpp
+        utils/test/ContainerTest.h
+)
+
+target_link_libraries(${PROJECT_NAME}
+        LibCDS::cds
 )

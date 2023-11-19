@@ -21,11 +21,14 @@ namespace test::framework {
 
         /// @brief generates set of operations
         /// @param writeLogFile flag is <b>true</b> if you want to write logs to a file, otherwise <b>false</b>
-        void generator(bool writeLogFile, const std::string &file_name = "default_log_file.txt");
+        void generate(bool writeLogFile, const std::string&file_name = "default_log_file.txt");
 
-        void write_log(const std::string&file_name);
+        void write_log(const std::string&file_name) const;
 
-        char *op2s(int16_t op);
+        static char* op2s(int16_t op);
+
+    public:
+        const std::vector<std::pair<int16_t, int>>& get_operations() const;
 
     private:
         std::mt19937_64 gen_engine;
@@ -41,7 +44,7 @@ namespace test::framework {
         /// @brief operation quantity to be generated
         uint64_t operations_q;
         /// @brief operations sequence
-        std::vector<int16_t> operations;
+        std::vector<std::pair<int16_t, int>> operations;
     };
 }; // test::framework
 
