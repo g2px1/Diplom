@@ -12,15 +12,9 @@ include_directories(
         testGenerator
 )
 
-add_executable(diplom main.cpp
-        containerTest/ContainerTest.h
-        random/PRNG.cpp
-        random/PRNG.h
+add_executable(${PROJECT_NAME} main.cpp
         duration/DurationCounter.cpp
         duration/DurationCounter.h
-        operations/TestOperations.h
-        thread/Pool.h
-        operations/ContainerPreparer.h
-        operations/ContainerFunctions.h
-        testGenerator/Generator.h
+        generator/Generator.cpp
+        generator/Generator.h
 )
