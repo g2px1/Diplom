@@ -18,6 +18,8 @@ add_executable(${PROJECT_NAME} main.cpp
         generator/Generator.h
         utils/test/ContainerTest.cpp
         utils/test/ContainerTest.h
+        utils/wrapper/ContainerWrapper.cpp
+        utils/wrapper/ContainerWrapper.h
 )
 
 target_link_libraries(${PROJECT_NAME}

@@ -7,6 +7,7 @@
 #include <vector>
 #include <unordered_map>
 #include <stdexcept>
+#include <cstdint>
 
 namespace test::framework::container {
     typedef enum containerType {

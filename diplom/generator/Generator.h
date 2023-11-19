@@ -11,12 +11,12 @@
 #include <cinttypes>
 
 namespace test::framework {
-    /// @brief set of operations' indexes: 0x0 - PUSH, 0x1 - DELETE, 0x2 - READ, 0x3 - WRITE
+    /// @brief set of operations' indexes: 0x0 - INSERT, 0x1 - DELETE, 0x2 - READ, 0x3 - WRITE
     constexpr int16_t OP_OPERATIONS[4] = {0x0, 0x1, 0x2, 0x3};
 
     class Generator {
     public:
-        Generator(uint8_t push_percantage, uint8_t delete_percantage, uint8_t read_percantage, uint8_t write_percantage,
+        Generator(uint8_t insert_percantage, uint8_t delete_percantage, uint8_t read_percantage, uint8_t write_percantage,
                   uint64_t operations_quantity);
 
         /// @brief generates set of operations
