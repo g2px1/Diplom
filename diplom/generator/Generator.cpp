@@ -16,6 +16,7 @@ test::framework::Generator::Generator(uint8_t push_percantage,
   if (total_distribution != 100) {
     std::cerr << "Wrong distribution: " << (int)total_distribution
               << "%, should be 100%";
+    exit(2);
   }
   std::random_device rd;
   this->gen_engine = std::mt19937_64(rd());
