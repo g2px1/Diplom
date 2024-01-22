@@ -6,13 +6,13 @@
 #include <cerrno>
 #include <cinttypes>
 
-namespace test::framework {
+namespace test::framework::generator {
     /// @brief set of operations' indexes: 0x0 - INSERT, 0x1 - DELETE, 0x2 - READ, 0x3 - WRITE
     constexpr int16_t OP_OPERATIONS[4] = {0x0, 0x1, 0x2, 0x3};
 
     class Generator {
     public:
-        Generator(uint8_t insert_percantage, uint8_t delete_percantage, uint8_t read_percantage, uint8_t write_percantage,
+        Generator(uint8_t insert_percantage, uint8_t erase_percantage, uint8_t read_percantage, uint8_t write_percantage,
                   uint64_t operations_quantity);
 
         /// @brief generates set of operations
@@ -32,7 +32,7 @@ namespace test::framework {
         /// @brief abstract name for operations such as `enqueue` etc.
         uint8_t push;
         /// @brief abstract name for operations such as `dequeue` etc.
-        uint8_t pop;
+        uint8_t erase;
         /// @brief abstract name for operations such as `at`, operator `[]` etc.
         uint8_t read;
         /// @brief abstract name for operations such as `insert` etc.
